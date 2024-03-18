@@ -1,4 +1,4 @@
-import 'package:awesome_project/widgets/widgets.dart';
+import 'package:awesome_project/examples/widgets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
