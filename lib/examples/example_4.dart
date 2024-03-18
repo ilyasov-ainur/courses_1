@@ -20,10 +20,6 @@ class Example4 extends StatelessWidget {
 }
 
 class _TraficLight extends StatefulWidget {
-  _TraficLight() {
-    log('TraficLight init 🚦');
-  }
-
   @override
   State<_TraficLight> createState() => _TraficLightState();
 }
@@ -32,6 +28,12 @@ class _TraficLightState extends State<_TraficLight> {
   Color? color;
   bool isCircleShape = true;
   int horeloadCounter = 0;
+
+  @override
+  void initState() {
+    log('TraficLight init 🚦');
+    super.initState();
+  }
 
   @override
   void reassemble() {
@@ -92,7 +94,7 @@ class _TraficLightState extends State<_TraficLight> {
 
 class _TraficLightSquare extends StatefulWidget {
   final Color? color;
-  _TraficLightSquare({
+  const _TraficLightSquare({
     required this.color,
   });
 
@@ -112,7 +114,9 @@ class _TraficLightSquareState extends State<_TraficLightSquare> {
   @override
   void didUpdateWidget(covariant _TraficLightSquare oldWidget) {
     log('_TraficLightSquare update $_emoji');
-    color = widget.color!;
+    if (widget.color != null) {
+      color = widget.color!;
+    }
     super.didUpdateWidget(oldWidget);
   }
 
@@ -162,7 +166,7 @@ class _TraficLightSquareState extends State<_TraficLightSquare> {
 
 class _TrafficLightCircle extends StatefulWidget {
   final Color? color;
-  _TrafficLightCircle({
+  const _TrafficLightCircle({
     required this.color,
   });
 

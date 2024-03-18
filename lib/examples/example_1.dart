@@ -48,7 +48,6 @@ class _TrafficLightCircle extends StatelessWidget {
   final Color color;
   const _TrafficLightCircle({
     required this.color,
-    super.key,
   });
 
   @override

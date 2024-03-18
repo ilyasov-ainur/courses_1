@@ -21,14 +21,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,23 +38,23 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             _Button(
               text: 'Expample 0',
-              child: Example0(),
+              page: Example0(),
             ),
             _Button(
               text: 'Expample 1',
-              child: Example1(),
+              page: Example1(),
             ),
             _Button(
               text: 'Expample 2',
-              child: Example2(),
+              page: Example2(),
             ),
             _Button(
               text: 'Expample 3',
-              child: Example3(),
+              page: Example3(),
             ),
             _Button(
               text: 'Expample 4',
-              child: Example4(),
+              page: Example4(),
             ),
           ],
         ),
@@ -70,10 +65,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class _Button extends StatelessWidget {
   const _Button({
-    required this.child,
+    required this.page,
     required this.text,
   });
-  final Widget child;
+  final Widget page;
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -81,7 +76,7 @@ class _Button extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => child),
+          MaterialPageRoute(builder: (context) => page),
         );
       },
       child: Text(text),

@@ -82,7 +82,6 @@ class _TrafficLightCircle extends StatelessWidget {
   final Color color;
   _TrafficLightCircle({
     required this.color,
-    super.key,
   }) {
     log('TrafficLightCircle init $_emoji');
   }
